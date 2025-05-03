@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NYC Tax Class Prediction</title>
+</head>
+<body>
+    <h2>Predict NYC Property Tax Class</h2>
+    <form action="/predict" method="post">
+        SALE PRICE: <input type="number" name="sale_price" step="0.01" required><br>
+        LAND SQUARE FEET: <input type="number" name="land_sqft" step="0.01" required><br>
+        GROSS SQUARE FEET: <input type="number" name="gross_sqft" step="0.01" required><br>
+        YEAR BUILT: <input type="number" name="year_built" required><br>
+        SALE YEAR: <input type="number" name="sale_year" required><br>
+        SALE MONTH: <input type="number" name="sale_month" required><br>
+        BUILDING CLASS CATEGORY: <input type="text" name="building_class" required><br>
+        BOROUGH: <input type="text" name="borough" required><br>
+        NEIGHBORHOOD: <input type="text" name="neighborhood" required><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h3>{{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
